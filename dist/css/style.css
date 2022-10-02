@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --gray: hsl(0, 0%, 100%);
+    --dark-gray: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+
+    --transition: all ease 600ms;
+}
+
+html {
+    font-family: Overpass;
+    font-size: .9rem;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--very-dark-blue);
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+.card {
+    background: var(--dark-blue);
+    border-radius: 1.25rem;
+    box-sizing: border-box;
+    padding: 2rem 1.5rem;
+    
+    width: 330px;
+
+    
+}
+
+@media (min-width: 760px) {
+    .card {
+        width: 370px;
+        padding: 2rem;
+    }
+}
+
+.card__rating,
+.card__submit {
+    transition: var(--transition);
+}
+.card__rating .card__title,
+.card__rating .card__description {
+    text-align: left;
+}
+
+.card__icon {
+    border-radius: 100vw;
+    padding: 1rem;
+    background: hsla(216, 12%, 54%, 0.185);
+}
+
+.card__title {
+    color: var(--gray);
+}
+
+.card__description {
+    color: var(--dark-gray);
+}
+
+.card__scale {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    padding-inline-start: 0;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.card__scale-item {
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    background: hsla(216, 12%, 54%, 0.185);
+    color: var(--dark-gray);
+    border-radius: 50%;
+    padding: 1rem;
+
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+/* To be included in the JS file */
+.card__scale-item--selected {
+    background: var(--dark-gray);
+    color: var(--gray);
+}
+
+.card__scale-item:hover,
+.card__scale-item:focus,
+.card__scale-item:active {
+    cursor: pointer;
+    background: var(--orange);
+    color: var(--gray);
+    transition: var(--transition);
+}
+
+
+.card__btn {
+    display: block;
+    border-radius: 100vw;
+    border: none;
+    width: 100%;
+    height: 3rem;
+    
+    text-transform: uppercase;
+    background: var(--orange);
+    color: var(--gray);
+    letter-spacing: 2px;
+    font-family: inherit;
+    font-weight: 400;
+
+    transition: all ease 600ms;
+}
+
+.card__btn:hover,
+.card__btn:focus,
+.card__btn:active {
+    cursor: pointer;
+    background: var(--gray);
+    color: var(--orange);
+    transition: var(--transition);
+}
+
+
+.card__submit .card__title,
+.card__submit .card__description {
+    text-align: center;
+}
+
+
+.card__submit {
+    display: grid;
+    place-items: center;
+
+}
+
+.card__submit svg {
+    margin-bottom: .5rem;
+}
+
+.card__result {
+    color: var(--orange);
+    padding: .5rem 1rem;
+    background: hsla(216, 12%, 54%, 0.185);
+    border-radius: 100vw;
+    width: max-content;
+    display: block;
+}
+
+.card__submit .card__title {
+    margin: .5rem 0;
+}
+
+.card__submit .card__description {
+    margin-top: 0;
+}
+
+.card--hide {
+    display: none;
+
+    transition: var(--transition); 
+}
